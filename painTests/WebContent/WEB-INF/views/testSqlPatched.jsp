@@ -7,7 +7,7 @@
 <body>
 		<h3>Demystify Sql Injection</h3>
 
-		<form action="<%= application.getContextPath() %>/restricted/sql" method="post">
+		<form action="<%= application.getContextPath() %>/restricted/patched/sql" method="post">
 				First name - <input type="text" name="name"> <input
 						type="submit"
 				>

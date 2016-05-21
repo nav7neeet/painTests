@@ -9,34 +9,32 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.acc.dao.FetchDetails;
+import com.acc.dao.FetchDetailsPatched;
 
-@WebServlet("/restricted/sql")
-public class SqlController extends HttpServlet
+@WebServlet("/restricted/patched/sql")
+public class SqlPatchedController extends HttpServlet
 {
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException,
-			IOException
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException
 	{
 		String input = request.getParameter("name");
 		System.out.println("user input - " + input);
-
+		
 		List list;
 		try
 		{
-			list = new FetchDetails().displayDetails(input);
+			list = new FetchDetailsPatched().displayDetails(input);
 			if (list.isEmpty())
 			{
-				request.getRequestDispatcher(
-						"/WEB-INF/views/noResults.jsp").forward(
+				request.getRequestDispatcher("/WEB-INF/views/noResults.jsp").forward(
 						request, response);
 			}
-
+			
 			else
 			{
 				request.setAttribute("details", list);
-				request.getRequestDispatcher(
-						"/WEB-INF/views/userDetails.jsp").forward(
+				request.getRequestDispatcher("/WEB-INF/views/userDetails.jsp").forward(
 						request, response);
 			}
 		}

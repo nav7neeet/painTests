@@ -33,11 +33,20 @@
 
 	<servlet>
 		<servlet-name>testSql</servlet-name>
-		<jsp-file>/WEB-INF/views/testSql.jsp</jsp-file>
+		<jsp-file>/WEB-INF/views/testSqlUnpatched.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>testSql</servlet-name>
-		<url-pattern>/restricted/testSql</url-pattern>
+		<url-pattern>/restricted/unpatched/testSql</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>testSqlPatched</servlet-name>
+		<jsp-file>/WEB-INF/views/testSqlPatched.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>testSqlPatched</servlet-name>
+		<url-pattern>/restricted/patched/testSql</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
