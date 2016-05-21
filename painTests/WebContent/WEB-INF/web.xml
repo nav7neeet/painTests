@@ -21,6 +21,15 @@
 		<servlet-name>testCsrf</servlet-name>
 		<url-pattern>/restricted/testCsrf</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>csrfUnpatched</servlet-name>
+		<jsp-file>/WEB-INF/views/testCsrfUnpatched.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>csrfUnpatched</servlet-name>
+		<url-pattern>/restricted/csrf/unpatched</url-pattern>
+	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>testSql</servlet-name>

@@ -10,8 +10,8 @@
 <h3>Fraud website, it sends a GET request to another website which a normal user cannot see</h3>
 <br><br>
 You can see the batman image but you cant see what went behind the scene. Check console Man!<br>
-<img src="/painTest/restricted/fraud?creationTime=<%= session.getCreationTime() %>" width="0" height="0" >
-<img  src="/painTest/images/batman.PNG">
+<img src="<%= application.getContextPath() %>/restricted/fraud?creationTime=<%= session.getCreationTime() %>" width="0" height="0" >
+<img  src="<%= application.getContextPath() %>/images/batman.PNG">
 
 </body>
 </html>

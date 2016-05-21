@@ -9,6 +9,6 @@
 <br><br>
 <h3>Session timed out due to inactivity.</h3>
 <br><br>
-<a href="/painTest/public/home">click here to login again</a>
+<a href="<%= application.getContextPath() %>/public/home">click here to login again</a>
 </body>
 </html>

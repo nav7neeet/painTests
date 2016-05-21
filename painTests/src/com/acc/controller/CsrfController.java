@@ -12,31 +12,33 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/restricted/csrf")
 public class CsrfController extends HttpServlet
 {
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException,
-			IOException
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException
 	{
-		String input = (String) request.getParameter("name");
-		String antiCSRFToken = (String) request
-				.getParameter("antiCSRFToken");
+		String input = request.getParameter("name");
+		String antiCSRFToken = request.getParameter("antiCSRFToken");
 		System.out.println("user input Get- " + input);
 		System.out.println("session creation time - " + antiCSRFToken);
-
+		if (antiCSRFToken == null)
+		{
+			request.setAttribute("errorMessage", "CSRF detected!!");
+		}
+		
 		RequestDispatcher rd = request
 				.getRequestDispatcher("/WEB-INF/views/csrfResult.jsp");
 		rd.forward(request, response);
 	}
-
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException,
-			IOException
+	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException
 	{
-		String input = (String) request.getParameter("name");
-		String antiCSRFToken = (String) request
-				.getParameter("antiCSRFToken");
+		String input = request.getParameter("name");
+		String antiCSRFToken = request.getParameter("antiCSRFToken");
 		System.out.println("user input Post - " + input);
 		System.out.println("session creation time - " + antiCSRFToken);
-
+		
 		RequestDispatcher rd = request
 				.getRequestDispatcher("/WEB-INF/views/csrfResult.jsp");
 		rd.forward(request, response);

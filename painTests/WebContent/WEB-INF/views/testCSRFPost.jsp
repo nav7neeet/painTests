@@ -15,7 +15,7 @@
 <body onload="document.forms[0].submit()">
 Missile Man takes off!
 
-<form action="/painTest/restricted/csrf" name="testCsrf" method="post">
+<form action="<%= application.getContextPath() %>/restricted/csrf" name="testCsrf" method="post">
 	<input type="text" name="name" value="csrf Unleashedd">
 	<input type="submit" >
 </form>

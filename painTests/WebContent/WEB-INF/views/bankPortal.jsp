@@ -8,7 +8,7 @@
 <% response.addHeader("X-Frame-Options", "allow"); %>
 <body>
 <h3>Bank portal</h3>
-<form action="/painTest/restricted/nonEvilWebsite">
+<form action="<%= application.getContextPath() %>/restricted/nonEvilWebsite">
 Enter amount to transfer: <input type="text"  name="amount" >
 <input type="submit">
 </form>

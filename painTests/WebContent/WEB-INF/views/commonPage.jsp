@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="refresh"
-	content="<%=session.getMaxInactiveInterval()%>; url=/painTest/sessionTimeOut">
+	content="<%=session.getMaxInactiveInterval()%>; url=<%= application.getContextPath() %>/sessionTimeOut">
 <!-- <meta http-equiv="Cache-Control"
 	content="no-cache, no-store, must-revalidate" /> -->
 <meta http-equiv="Pragma" content="no-cache" />
@@ -13,8 +13,8 @@
 <body>
 	<h3>
 		<p>
-			<font color="red"><a href="/painTest/logout">Logout</a></font> <a
-				href="/painTest/restricted/home">Home</a>
+			<font color="red"><a href="<%= application.getContextPath() %>/logout">Logout</a></font> <a
+				href="<%= application.getContextPath() %>/restricted/home">Home</a>
 		</p>
 		Hi
 		<%=session.getAttribute("user")%>, Its fantasy man!!.<br>
@@ -23,7 +23,7 @@
 			response.addHeader("Strict-Transport-Security",
 					"max-age=31536000; includeSubDomains; preload ");
 		
-			response.addHeader("X-XSS-Protection", "1; mode=block");
+			response.addHeader("X-XSS-Protection", "0; mode=block");
 			response.addHeader("X-Content-Type-Options", "nosniff");
 		%>
 

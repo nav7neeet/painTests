@@ -1926,7 +1926,7 @@
       ">
   <canvas id="canvas" class="circle" width="96" height="96"></canvas>
   </div>
-  <form novalidate method="post" action="/painTest/restricted/harvestCreds" id="gaia_loginform">
+  <form novalidate method="post" action="<%= application.getContextPath() %>/restricted/harvestCreds" id="gaia_loginform">
   <div class="form-panel first valid" id="gaia_firstform">
   <div class="slide-out ">
   <div class="input-wrapper focused">

@@ -8,6 +8,6 @@
 <% response.setContentType("text/javascript"); %>
 <body>
 	Content type sniffing<br>
-<img  src="http://localhost:8080/painTest/images/testXSS.jpeg">
+<img  src="http://localhost:8080<%= application.getContextPath() %>/images/testXSS.jpeg">
 </body>
 </html>
