@@ -7,9 +7,8 @@
 </head>
 <body>
 		<h3> Demystify CSRF</h3>
-		<form action="<%= application.getContextPath() %>/restricted/csrf" method="get">
+		<form action="<%= application.getContextPath() %>/restricted/unpatched/csrfGet" method="get">
 				Email - <input type="text" name="email" > <input type="submit" value="update email">
-		<input type="hidden" name="antiCSRFToken" value="<%= session.getCreationTime()  %>">
 		</form>
 		
 </body>

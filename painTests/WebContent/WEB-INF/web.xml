@@ -15,20 +15,29 @@
 
 	<servlet>
 		<servlet-name>testCsrf</servlet-name>
-		<jsp-file>/WEB-INF/views/testCsrf.jsp</jsp-file>
+		<jsp-file>/WEB-INF/views/testCsrfPatched.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>testCsrf</servlet-name>
-		<url-pattern>/restricted/testCsrf</url-pattern>
+		<url-pattern>/restricted/patched/testCsrf</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>csrfUnpatched</servlet-name>
-		<jsp-file>/WEB-INF/views/testCsrfUnpatched.jsp</jsp-file>
+		<servlet-name>csrfUnpatchedGet</servlet-name>
+		<jsp-file>/WEB-INF/views/testCsrfGetUnpatched.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>csrfUnpatched</servlet-name>
-		<url-pattern>/restricted/csrf/unpatched</url-pattern>
+		<servlet-name>csrfUnpatchedGet</servlet-name>
+		<url-pattern>/restricted/unpatched/testCsrfGet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>csrfUnpatchedPost</servlet-name>
+		<jsp-file>/WEB-INF/views/testCsrfPostUnpatched.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>csrfUnpatchedPost</servlet-name>
+		<url-pattern>/restricted/unpatched/testCsrfPost</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
