@@ -8,7 +8,17 @@
 <body>
 <a href="<%= application.getContextPath() %>/restricted/unpatched/testSql">SQL Injection - unpatched</a><br>
 <a href="<%= application.getContextPath() %>/restricted/patched/testSql">SQL Injection - patched</a><br>
-<a href="<%= application.getContextPath() %>/restricted/testXss">XSS</a><br>
+
+<a href="<%= application.getContextPath() %>/restricted/unpatched/testXssBody">XSS - unpatched Body</a><br>
+<a href="<%= application.getContextPath() %>/restricted/unpatched/testXssAttribute">XSS - unpatched Attribute</a><br>
+<a href="<%= application.getContextPath() %>/restricted/unpatched/testXssHiddenVar">XSS - unpatched Hidden variable</a><br>
+<a href="<%= application.getContextPath() %>/restricted/unpatched/testXssJS">XSS - unpatched Java Script</a><br>
+<a href="<%= application.getContextPath() %>/restricted/unpatched/testXssCSS">XSS - unpatched CSS</a><br>
+<a href="<%= application.getContextPath() %>/restricted/patched/testXssBody">XSS - patched Body</a><br>
+<a href="<%= application.getContextPath() %>/restricted/patched/testXssAttribute">XSS - patched Attribute</a><br>
+<a href="<%= application.getContextPath() %>/restricted/patched/testXssHiddenVar">XSS - patched Hidden variable</a><br>
+<a href="<%= application.getContextPath() %>/restricted/patched/testXssJS">XSS - patched Java Script</a><br>
+
 <a href="<%= application.getContextPath() %>/restricted/fraudWebsite">Fraud Web Site</a><br>
 <a href="<%= application.getContextPath() %>/restricted/unpatched/testCsrfGet">CSRF GET- unpatched</a><br>
 <a href="<%= application.getContextPath() %>/restricted/unpatched/testCsrfPost">CSRF POST- unpatched</a><br>

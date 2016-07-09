@@ -59,12 +59,84 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>testXss</servlet-name>
-		<jsp-file>/WEB-INF/views/testXss.jsp</jsp-file>
+		<servlet-name>testXssBody</servlet-name>
+		<jsp-file>/WEB-INF/views/unpatched/testXssBody.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>testXss</servlet-name>
-		<url-pattern>/restricted/testXss</url-pattern>
+		<servlet-name>testXssBody</servlet-name>
+		<url-pattern>/restricted/unpatched/testXssBody</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>testXssAttribute</servlet-name>
+		<jsp-file>/WEB-INF/views/unpatched/testXssAttribute.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>testXssAttribute</servlet-name>
+		<url-pattern>/restricted/unpatched/testXssAttribute</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>testXssHiddenVar</servlet-name>
+		<jsp-file>/WEB-INF/views/unpatched/testXssHiddenVar.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>testXssHiddenVar</servlet-name>
+		<url-pattern>/restricted/unpatched/testXssHiddenVar</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>testXssJS</servlet-name>
+		<jsp-file>/WEB-INF/views/unpatched/testXssJS.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>testXssJS</servlet-name>
+		<url-pattern>/restricted/unpatched/testXssJS</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>testXssCSS</servlet-name>
+		<jsp-file>/WEB-INF/views/unpatched/testXssCSS.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>testXssCSS</servlet-name>
+		<url-pattern>/restricted/unpatched/testXssCSS</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>XssPatchedAttribute</servlet-name>
+		<jsp-file>/WEB-INF/views/patched/testXssAttribute.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>XssPatchedAttribute</servlet-name>
+		<url-pattern>/restricted/patched/testXssAttribute</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>XssPatchedBody</servlet-name>
+		<jsp-file>/WEB-INF/views/patched/testXssBody.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>XssPatchedBody</servlet-name>
+		<url-pattern>/restricted/patched/testXssBody</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>XssHiddenVar</servlet-name>
+		<jsp-file>/WEB-INF/views/patched/testXssHiddenVar.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>XssHiddenVar</servlet-name>
+		<url-pattern>/restricted/patched/testXssHiddenVar</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>XssJS</servlet-name>
+		<jsp-file>/WEB-INF/views/patched/testXssJS.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>XssJS</servlet-name>
+		<url-pattern>/restricted/patched/testXssJS</url-pattern>
 	</servlet-mapping>
 
 	<servlet>

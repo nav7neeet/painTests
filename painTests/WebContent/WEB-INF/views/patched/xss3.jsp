@@ -9,9 +9,9 @@
 </head>
 
 <body>
-		<h4>Using user input in attribute with quotes (single or double
-				quotes)</h4>
+		<h4>Using user input in hidden variable oops! Xssed'</h4>
 		<br>
-		<a href='http://www.google.com/<%=name%>'> Google</a>
+		
+		<input type="hidden" value="<%=name%>">
 </body>
 </html>

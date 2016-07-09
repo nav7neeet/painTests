@@ -26,13 +26,14 @@ public class FetchDetailsPatched
 		DBConnection dbConnection = new DBConnection();
 		Connection connection = dbConnection.openDBConnection();
 		
-		String query = properties.getProperty("preparedStatement");
+		// String query = properties.getProperty("preparedStatement");
+		String query = "select * from users where first_name='" + id + "'";
 		
 		System.out.println("query - " + query);
 		
 		// prepare statement
 		ps = connection.prepareStatement(query);
-		ps.setString(1, id);
+		// ps.setString(1, id);
 		
 		// execute prepared statement
 		rs = ps.executeQuery();
