@@ -176,21 +176,39 @@
 	</servlet-mapping>
 
 	<servlet>
+		<servlet-name>iframeTest</servlet-name>
+		<jsp-file>/WEB-INF/views/unpatched/testClickJacking.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>iframeTest</servlet-name>
+		<url-pattern>/restricted/unpatched/testClickJacking</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>iframe</servlet-name>
-		<jsp-file>/WEB-INF/views/testClickJacking.jsp</jsp-file>
+		<jsp-file>/WEB-INF/views/patched/testClickJacking.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>iframe</servlet-name>
-		<url-pattern>/restricted/testClickJacking</url-pattern>
+		<url-pattern>/restricted/patched/testClickJacking</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>bankPortal</servlet-name>
-		<jsp-file>/WEB-INF/views/bankPortal.jsp</jsp-file>
+		<jsp-file>/WEB-INF/views/unpatched/bankPortal.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>bankPortal</servlet-name>
-		<url-pattern>/restricted/bankPortal</url-pattern>
+		<url-pattern>/restricted/unpatched/bankPortal</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>bankPortal2</servlet-name>
+		<jsp-file>/WEB-INF/views/patched/bankPortal.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>bankPortal2</servlet-name>
+		<url-pattern>/restricted/patched/bankPortal</url-pattern>
 	</servlet-mapping>
 
 	<servlet>

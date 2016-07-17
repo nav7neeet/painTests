@@ -26,7 +26,8 @@
 <a href="<%= application.getContextPath() %>/restricted/unpatched/testCsrfPost">CSRF POST- unpatched</a><br>
 <a href="<%= application.getContextPath() %>/restricted/patched/testCsrf">CSRF - patched</a><br>
 <a href="<%= application.getContextPath() %>/restricted/testCookieStealing">Cookie Stealing</a><br>
-<a href="<%= application.getContextPath() %>/restricted/testClickJacking">Click Jacking</a><br>
+<a href="<%= application.getContextPath() %>/restricted/unpatched/testClickJacking">Click Jacking - unpatched</a><br>
+<a href="<%= application.getContextPath() %>/restricted/patched/testClickJacking">Click Jacking - patched </a><br>
 <a href="<%= application.getContextPath() %>/restricted/admin">Role Based Authorisation</a><br>
 <a href="<%= application.getContextPath() %>/test">Test HSTS</a><br>
 <a href="<%= application.getContextPath() %>/restricted/testPhishingDirect">Phishing Direct</a><br>
