@@ -1,3 +1,5 @@
 1. ESAPI - XSS protection
 2. HSTS
 3. Cache control
+4. X-XSS protection
+5. XSS in CSS

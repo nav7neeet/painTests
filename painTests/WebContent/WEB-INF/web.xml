@@ -104,6 +104,15 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>testX-Xss</servlet-name>
+		<jsp-file>/WEB-INF/views/unpatched/testX-Xss.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>testX-Xss</servlet-name>
+		<url-pattern>/restricted/unpatched/testXXss</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>XssPatchedAttribute</servlet-name>
 		<jsp-file>/WEB-INF/views/patched/testXssAttribute.jsp</jsp-file>
 	</servlet>
@@ -137,6 +146,15 @@
 	<servlet-mapping>
 		<servlet-name>XssJS</servlet-name>
 		<url-pattern>/restricted/patched/testXssJS</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>X-Xss</servlet-name>
+		<jsp-file>/WEB-INF/views/patched/testX-Xss.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>X-Xss</servlet-name>
+		<url-pattern>/restricted/patched/testXXss</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
