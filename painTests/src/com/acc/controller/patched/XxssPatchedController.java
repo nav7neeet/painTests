@@ -1,4 +1,4 @@
-package com.acc.controller;
+package com.acc.controller.patched;
 
 import java.io.IOException;
 
@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/restricted/unpatched/XXSS")
-public class XxssUnpatchedController extends HttpServlet
+@WebServlet("/restricted/patched/XXSS")
+public class XxssPatchedController extends HttpServlet
 {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -18,10 +18,10 @@ public class XxssUnpatchedController extends HttpServlet
 		String input = request.getParameter("name");
 		System.out.println("user input Get- " + input);
 		
+		response.setHeader("X-XSS-Protection", "1");
 		request.setAttribute("userInput", input);
-		request.getRequestDispatcher("/WEB-INF/views/unpatched/XxssResult.jsp").forward(
+		request.getRequestDispatcher("/WEB-INF/views/patched/XxssResult.jsp").forward(
 				request, response);
 		
 	}
-	
 }

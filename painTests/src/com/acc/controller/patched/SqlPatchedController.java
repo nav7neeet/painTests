@@ -1,4 +1,4 @@
-package com.acc.controller;
+package com.acc.controller.patched;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.acc.dao.FetchDetailsUnpatched;
+import com.acc.dao.FetchDetailsPatched;
 
-@WebServlet("/restricted/unpatched/sql")
-public class SqlUnpatchedController extends HttpServlet
+@WebServlet("/restricted/patched/sql")
+public class SqlPatchedController extends HttpServlet
 {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -24,7 +24,7 @@ public class SqlUnpatchedController extends HttpServlet
 		List list;
 		try
 		{
-			list = new FetchDetailsUnpatched().displayDetails(input);
+			list = new FetchDetailsPatched().displayDetails(input);
 			if (list.isEmpty())
 			{
 				request.getRequestDispatcher("/WEB-INF/views/noResults.jsp").forward(

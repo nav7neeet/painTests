@@ -1,4 +1,4 @@
-package com.acc.controller;
+package com.acc.controller.patched;
 
 import java.io.IOException;
 
@@ -8,8 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/restricted/unpatched/xss")
-public class XssUnpatchedController extends HttpServlet
+import org.owasp.esapi.ESAPI;
+
+@WebServlet("/restricted/patched/xss")
+public class XssPatchedController extends HttpServlet
 {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -17,43 +19,41 @@ public class XssUnpatchedController extends HttpServlet
 	{
 		String input = request.getParameter("name");
 		String hiddenVar = request.getParameter("hiddenVar");
+		String output = "";
 		System.out.println("user input - " + input);
 		
 		switch (hiddenVar)
 		{
 			case "body":
-				request.setAttribute("userInput", input);
-				request.getRequestDispatcher("/WEB-INF/views/unpatched/xss1.jsp")
-						.forward(request, response);
+				output = ESAPI.encoder().encodeForHTML(input);
+				request.setAttribute("userInput", output);
+				request.getRequestDispatcher("/WEB-INF/views/patched/xss1.jsp").forward(
+						request, response);
 				break;
 			
 			case "attribute":
-				request.setAttribute("userInput", input);
-				request.getRequestDispatcher("/WEB-INF/views/unpatched/xss2.jsp")
-						.forward(request, response);
+				output = ESAPI.encoder().encodeForHTMLAttribute(input);
+				request.setAttribute("userInput", output);
+				request.getRequestDispatcher("/WEB-INF/views/patched/xss2.jsp").forward(
+						request, response);
 				break;
 			
 			case "hidden":
-				request.setAttribute("userInput", input);
+				output = ESAPI.encoder().encodeForHTMLAttribute(input);
+				request.setAttribute("userInput", output);
 				request.getRequestDispatcher("/WEB-INF/views/unpatched/xss3.jsp")
 						.forward(request, response);
 				break;
 			
 			case "js":
-				request.setAttribute("userInput", input);
+				output = ESAPI.encoder().encodeForJavaScript(input);
+				request.setAttribute("userInput", output);
 				request.getRequestDispatcher("/WEB-INF/views/unpatched/xss4.jsp")
-						.forward(request, response);
-				break;
-			
-			case "css":
-				request.setAttribute("userInput", input);
-				request.getRequestDispatcher("/WEB-INF/views/unpatched/xss5.jsp")
 						.forward(request, response);
 				break;
 			
 			default:
 				break;
 		}
-		
 	}
 }
