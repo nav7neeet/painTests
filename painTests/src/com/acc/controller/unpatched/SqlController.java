@@ -1,4 +1,4 @@
-package com.acc.controller.patched;
+package com.acc.controller.unpatched;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.acc.dao.FetchDetailsPatched;
+import com.acc.dao.FetchDetailsUnpatched;
 
-@WebServlet("/restricted/patched/sql")
-public class SqlPatchedController extends HttpServlet
+@WebServlet("/restricted/unpatched/sql")
+public class SqlController extends HttpServlet
 {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -22,21 +22,19 @@ public class SqlPatchedController extends HttpServlet
 		System.out.println("user input - " + input);
 		
 		List list;
+		String recordFound = "true";
 		try
 		{
-			list = new FetchDetailsPatched().displayDetails(input);
+			list = new FetchDetailsUnpatched().displayDetails(input);
 			if (list.isEmpty())
 			{
-				request.getRequestDispatcher("/WEB-INF/views/noResults.jsp").forward(
-						request, response);
+				recordFound = "false";
 			}
 			
-			else
-			{
-				request.setAttribute("details", list);
-				request.getRequestDispatcher("/WEB-INF/views/userDetails.jsp").forward(
-						request, response);
-			}
+			request.setAttribute("recordFound", recordFound);
+			request.setAttribute("details", list);
+			request.getRequestDispatcher("/WEB-INF/views/sqlResult.jsp").forward(request,
+					response);
 		}
 		catch (Exception e)
 		{

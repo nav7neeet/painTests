@@ -17,13 +17,12 @@
 				href="<%= application.getContextPath() %>/restricted/home">Home</a>
 		</p>
 		Hi
-		<%=session.getAttribute("user")%>, Its fantasy man!!.<br>
+		<%=session.getAttribute("user")%>, Welcome to the world of fantasies and fairy-tales!!<br>
 		<%
 			session.setMaxInactiveInterval(6000);
 			response.addHeader("Strict-Transport-Security",
 					"max-age=31536000; includeSubDomains; preload ");
 		
-			/* response.addHeader("X-XSS-Protection", "0; mode=block"); */
 			response.addHeader("X-Content-Type-Options", "nosniff");
 		%>
 

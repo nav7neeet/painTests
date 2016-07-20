@@ -14,50 +14,42 @@ public class FetchDetailsUnpatched
 	public List displayDetails(String id) throws Exception
 	{
 		Properties properties = new Properties();
-		properties.load(Thread
-				.currentThread()
-				.getContextClassLoader()
-				.getResourceAsStream(
-						"com/acc/properties/query.properties"));
-
+		properties.load(Thread.currentThread().getContextClassLoader()
+				.getResourceAsStream("com/acc/properties/query.properties"));
+		
 		boolean result;
 		ResultSet rs;
 		Statement statement;
 		PreparedStatement ps;
 		CallableStatement callableStatement;
-
+		
 		DBConnection dbConnection = new DBConnection();
 		Connection connection = dbConnection.openDBConnection();
-
+		
 		String query = "select * from users where first_name='" + id + "';";
-
-		/*String query = "select * from users where first_name=" + "\"" + id
-				+ "\"" + ";";*/
-
-		//		String query = properties.getProperty("preparedStatement");
-
+		
 		System.out.println("query - " + query);
-
-		//		create statement
+		
+		// create statement
 		statement = connection.createStatement();
 		System.out.println("statement object created..." + statement);
-
-		//		execute statement
+		
+		// execute statement
 		result = statement.execute(query);
 		rs = statement.executeQuery(query);
 		System.out.println("query executed..." + rs);
-
+		
 		List list = new ArrayList();
-
+		
 		while (rs.next())
 		{
 			list.add(rs.getString(1));
 			list.add(rs.getString(2));
 			list.add(rs.getString(3));
 		}
-
+		
 		dbConnection.closeDBConnection();
-
+		
 		return list;
 	}
 }
