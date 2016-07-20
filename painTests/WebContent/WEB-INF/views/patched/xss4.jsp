@@ -14,6 +14,6 @@
 	var c=<%= name %>;
 </script>
 <body>
-	<h4>Using user input in JS! Xssed</h4>
+	<h4>User input inserted into JS! after output encoding...</h4>
 </body>
 </html>

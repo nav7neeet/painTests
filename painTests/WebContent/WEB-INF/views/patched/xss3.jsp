@@ -9,7 +9,7 @@
 </head>
 
 <body>
-		<h4>Using user input in hidden variable oops! Xssed'</h4>
+		<h4>User input inserted into hidden variable after output encoding..</h4>
 		<br>
 		
 		<input type="hidden" value="<%=name%>">

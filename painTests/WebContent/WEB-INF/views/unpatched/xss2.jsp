@@ -9,7 +9,7 @@
 %>
 </head>
 <body>
-		<h4>Using user input in attribute without quotes</h4>
+		<h4>User input inserted into HTML attribute without output encoding</h4>
 		<br>
 		<a href=http://www.google.com/<%=name%>> Google</a>
 

@@ -5,7 +5,7 @@
 <title>XSS</title>
 </head>
 <body>
-		<h4>User input as it is without any sanitization.</h4>
+		<h4>User input inserted into the body without any output encoding Lolz..</h4>
 		<br>
 		<%
 			String name = (String) request.getAttribute("userInput");
