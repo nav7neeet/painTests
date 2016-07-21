@@ -6,7 +6,7 @@
 </head>
 <body>
 		<h4>User input as it is without any sanitization.</h4>
-		<br>
+		<br>Not sure about the FF and IE behaviour about X-XSS-Protection.<br>
 		<%
 			String name = (String) request.getAttribute("userInput");
 			out.print(name);

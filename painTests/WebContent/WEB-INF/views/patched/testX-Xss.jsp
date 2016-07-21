@@ -8,7 +8,7 @@
 		<h3>Demystify X-XSS protection header</h3>
 
 		<form action="<%= application.getContextPath() %>/restricted/patched/XXSS" method="post">
-				First name - <input type="text" name="name"> <input
+				Input - <input type="text" name="name"> <input
 						type="submit"
 				>
 		</form>

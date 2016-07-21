@@ -14,12 +14,12 @@
 <a href="<%= application.getContextPath() %>/restricted/unpatched/testXssHiddenVar">XSS - unpatched (context: Hidden variable)</a><br>
 <a href="<%= application.getContextPath() %>/restricted/unpatched/testXssJS">XSS - unpatched (context: Java Script)</a><br>
 <a href="<%= application.getContextPath() %>/restricted/unpatched/testXssCSS">XSS - unpatched (context: CSS)</a><br>
-<a href="<%= application.getContextPath() %>/restricted/unpatched/testXXss">XSS - unpatched NO X-XSS Header present</a><br>
+<a href="<%= application.getContextPath() %>/restricted/unpatched/testXXss">XSS - unpatched (NO X-XSS-protection Header present)</a><br>
 <a href="<%= application.getContextPath() %>/restricted/patched/testXssBody">XSS - patched (context: Body)</a><br>
 <a href="<%= application.getContextPath() %>/restricted/patched/testXssAttribute">XSS - patched (context: Attribute)</a><br>
 <a href="<%= application.getContextPath() %>/restricted/patched/testXssHiddenVar">XSS - patched (context: Hidden variable)</a><br>
 <a href="<%= application.getContextPath() %>/restricted/patched/testXssJS">XSS - patched (context: Java Script)</a><br>
-<a href="<%= application.getContextPath() %>/restricted/patched/testXXss">XSS - patched  X-XSS Header present</a><br><br>
+<a href="<%= application.getContextPath() %>/restricted/patched/testXXss">XSS - patched  (X-XSS-protection Header present)</a><br><br>
 
 <a href="<%= application.getContextPath() %>/restricted/fraudWebsite">Fraud Web Site</a><br><br>
 <a href="<%= application.getContextPath() %>/restricted/unpatched/testCsrfGet">CSRF GET- unpatched</a><br>
