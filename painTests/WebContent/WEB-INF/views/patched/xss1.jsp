@@ -6,7 +6,7 @@
 </head>
 <body>
 		<h4>User input inserted into the body after output encoding Lolz..</h4>
-		<br>
+		Check the page source to see the encoding..<br><br>
 		<%
 			String name = (String) request.getAttribute("userInput");
 			out.print(name);

@@ -10,7 +10,7 @@
 
 <body>
 		<h4>User input inserted into hidden variable after output encoding..</h4>
-		<br>
+		Check the page source to see the encoding..<br><br>
 		
 		<input type="hidden" value="<%=name%>">
 </body>

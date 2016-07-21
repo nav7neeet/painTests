@@ -15,5 +15,6 @@
 </script>
 <body>
 	<h4>User input inserted into JS! after output encoding...</h4>
+	Check the page source to see the encoding..<br> 
 </body>
 </html>

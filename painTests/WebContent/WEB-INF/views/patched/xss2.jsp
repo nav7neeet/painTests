@@ -10,7 +10,7 @@
 </head>
 <body>
 		<h4>User input inserted into HTML attribute after output encoding</h4>
-		<br>
+		Check the page source to see the encoding..<br><br>
 		<a href=http://www.google.com/<%=name%>> Google</a>
 
 </body>
