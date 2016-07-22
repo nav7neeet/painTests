@@ -6,8 +6,15 @@
 </head>
 <body>
 
-<% String errorMessage= (String)request.getAttribute("errorMessage"); 
-	if(errorMessage==null)
+<% 
+	String errorMessage= (String)request.getAttribute("errorMessage"); 
+
+	if("unpatched".equals((String)request.getAttribute("test")))
+	{
+		out.print("Account recovery email updated successfully in the DB");
+	}
+	
+	else if(errorMessage==null)
 	{
 		out.print("No csrf detected!, Account recovery email updated successfully in the DB");
 	}

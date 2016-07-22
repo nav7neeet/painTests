@@ -18,6 +18,7 @@ public class CsrfUnPatchedPostController extends HttpServlet
 	{
 		String input = request.getParameter("name");
 		System.out.println("user input Get- " + input);
+		request.setAttribute("test", "unpatched");
 		
 		RequestDispatcher rd = request
 				.getRequestDispatcher("/WEB-INF/views/csrfResult.jsp");

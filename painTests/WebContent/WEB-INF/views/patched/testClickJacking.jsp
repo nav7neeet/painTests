@@ -8,7 +8,7 @@
 </head>
 <body>
 <h3>Demystify Click Jacking </h3>
-<br><br>
+Check console to see that the Bank portal was not loaded in the frame.cool!<br>
 <iframe src="<%= application.getContextPath() %>/restricted/patched/bankPortal" style="width:200px;height:150px;position:absolute;top:200px;left:00px;z-index:-1;opacity:1.0" ></iframe>
 
 <form action="<%= application.getContextPath() %>/restricted/evilWebsite">
