@@ -41,15 +41,15 @@ public class XssPatchedController extends HttpServlet
 			case "hidden":
 				output = ESAPI.encoder().encodeForHTMLAttribute(input);
 				request.setAttribute("userInput", output);
-				request.getRequestDispatcher("/WEB-INF/views/unpatched/xss3.jsp")
-						.forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/views/patched/xss3.jsp").forward(
+						request, response);
 				break;
 			
 			case "js":
 				output = ESAPI.encoder().encodeForJavaScript(input);
 				request.setAttribute("userInput", output);
-				request.getRequestDispatcher("/WEB-INF/views/unpatched/xss4.jsp")
-						.forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/views/patched/xss4.jsp").forward(
+						request, response);
 				break;
 			
 			default:

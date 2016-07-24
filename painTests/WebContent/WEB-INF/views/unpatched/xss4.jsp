@@ -11,9 +11,10 @@
 <script type="text/javascript">
 	var a=10;
 	var b=20;
-	var c=<%= name %>;
+	var c="<%= name %>";
 </script>
 <body>
+	<% response.setHeader("X-XSS-Protection", "0"); %>
 	<h4>User input inserted into JS! without output encoding.. Xssed!!</h4>
 </body>
 </html>

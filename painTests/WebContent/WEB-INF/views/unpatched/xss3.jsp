@@ -9,6 +9,7 @@
 </head>
 
 <body>
+		<% response.setHeader("X-XSS-Protection", "0"); %>
 		<h4>User input inserted into hidden variable without output encoding oops!</h4>
 		<br>
 		<input type="hidden" value="<%=name%>">
