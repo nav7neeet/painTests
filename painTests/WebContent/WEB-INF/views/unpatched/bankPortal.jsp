@@ -5,7 +5,7 @@
 <meta >
 	<title>Bank portal</title>
 </head>
-<% response.addHeader("X-Frame-Options", "allow"); %>
+<% response.addHeader("X-Frame-Options", "SAMEORIGIN"); %>
 <body>
 <h3>Bank portal</h3>
 <form action="<%= application.getContextPath() %>/restricted/nonEvilWebsite">
