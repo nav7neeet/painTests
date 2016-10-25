@@ -1,4 +1,4 @@
-package com.acc.controller;
+package com.acc.test;
 
 import java.io.IOException;
 
@@ -8,18 +8,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/restricted/evilWebsite")
-public class EvilWebsiteController extends HttpServlet
+@WebServlet("/restricted/test/XXssProtection")
+public class XXSSProtection extends HttpServlet
 {
+	private static final long serialVersionUID = 1L;
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException
 	{
-		System.out.println("Evil website receives the click..."
-				+ request.getParameter("amount"));
-		
-		request.getRequestDispatcher("/WEB-INF/result/clickJacking.jsp").forward(request,
+		String patched = request.getParameter("patched");
+		request.setAttribute("patched", patched);
+		request.getRequestDispatcher("/WEB-INF/test/XXSSProtection.jsp").forward(request,
 				response);
 	}
 }

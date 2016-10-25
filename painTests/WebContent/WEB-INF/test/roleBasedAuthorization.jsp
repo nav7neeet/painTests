@@ -2,12 +2,12 @@
 <%@ include file="/WEB-INF/views/commonPage.jsp"%>
 <html>
 <head>
-<title>Role Based Authorisation</title>
+<title>Admin</title>
 </head>
 <body>
 		<h3> Admin functions..</h3>
 		
-		Only admin! allowed here.
+		Sorry bro!! Only admin! allowed here.
 		
 </body>
 </html>

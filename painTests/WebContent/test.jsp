@@ -7,7 +7,8 @@
 </head>
 <% response.setContentType("text/javascript"); %>
 <body>
-	Content type sniffing<br>
-<img  src="http://localhost:8080<%= application.getContextPath() %>/images/testXSS.jpeg">
+	<form method="GET" action="googleplus"> 
+   <button type="submit">Login</button> 
+</form>
 </body>
 </html>
